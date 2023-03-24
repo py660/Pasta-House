@@ -5,5 +5,5 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - run: bash .github/versions.sh
-      - run: cat
+      - run: expr $(cat version.html) + 1 > version.html
+      - run: ls
