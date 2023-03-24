@@ -1,10 +1,19 @@
-function loadJS(url) {
-    var script = document.createElement("script");  // create a script DOM node
-    script.src = url;  // set its src to the provided URL
-   
-    document.head.appendChild(script);  // add it to the end of the head section of the page (could change 'head' to 'body' to add it to the end of the body section instead)
+function loadJS(url, callback){
+    // Adding the script tag to the head as suggested before
+    var head = document.head;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+
+    // Then bind the event to the callback function.
+    // There are several events for cross browser compatibility.
+    script.onreadystatechange = callback;
+    script.onload = callback;
+
+    // Fire the loading
+    head.appendChild(script);
 }
-import { $ } from "https://code.jquery.com/jquery-3.6.4.min.js";
+loadJS("https://code.jquery.com/jquery-3.6.4.min.js", function(){
 $.get("/version.html", function(data){
     v = data;
     // alert("This is version: " + v);
@@ -16,4 +25,5 @@ $.get("/version.html", function(data){
             }
         });
     }, 8000); // Every 8 seconds
+});
 });
