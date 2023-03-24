@@ -7,3 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
       - run: expr $(cat version.html) + 1 > version.html
+      - run: git config --global user.name "adityamwagh"
+      - run: git config --global user.email "adityamwagh@gmail.com"
+      - run: git add resume_aditya_wagh.pdf
+      - run: git commit -m "commit message"
+      - run: git push
