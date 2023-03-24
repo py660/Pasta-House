@@ -2,7 +2,7 @@ name: versions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  check-bats-version:
+  bump-version:
     runs-on: ubuntu-latest
     steps:
       - run: expr $(cat version.html) + 1 > version.html
