@@ -9,8 +9,8 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: expr $(cat version.html) + 1 > version.html
-      - run: git config --global user.name "VersioningBot"
-      - run: git config --global user.email "noreply@gmail.com"
+      - run: git config --global user.name "py660"
+      - run: git config --global user.email "93660666+py660@users.noreply.github.com"
       - run: git add version.html
       - run: git commit -m "bump version"
       - run: git push
