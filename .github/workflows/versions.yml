@@ -1,6 +1,6 @@
 name: versions
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push, pull_request]
+on: [push]
 jobs:
   bump-version:
     runs-on: ubuntu-latest
