@@ -1,9 +1,12 @@
 name: versions
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+on: [push, pull_request]
 jobs:
   bump-version:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2.3.4
+      - name: Bump Version Number
       - run: expr $(cat version.html) + 1 > version.html
       - run: ls
