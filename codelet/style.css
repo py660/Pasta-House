@@ -1,0 +1,51 @@
+body {
+    background-color: #4A4F51;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    margin: 10px 20px;
+    padding: 10px 55px;
+    height: 25px;
+    text-align: center;
+}
+
+#results {
+    width: max(calc(100% - 90px), 200px);
+    margin: 20px;
+    /*padding: 25px;*/
+    /*border: solid 2px white;*/
+    background-color: #4A4F51;
+}
+
+.item {
+    margin: 25px;
+    background-color: #53595A;
+    /*border: solid 2px white;*/
+    border-radius: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.item:hover {
+    background-color: #6B7474;
+}
+
+.item-name {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.item-desc {
+    color: #aeb8b7;
+}
+
+.item-author {
+    color: #C0C5C5;
+}

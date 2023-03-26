@@ -24,6 +24,6 @@ $.get("/version.html", function(data){
                 document.getElementById("update").style.opacity = "100%";
             }
         });
-    }, 8000); // Every 8 seconds
+    }, 10000); // Every 10 seconds
 });
 });
