@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
+    /*grid-auto-rows: minmax(100px, auto);*/
   }
   .left {
       grid-column:1;
@@ -11,8 +11,8 @@
       grid-column:2;
   }
   .biased-right {
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 1fr 3fr;
   }
   .biased-left {
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 3fr 1fr;
   }
