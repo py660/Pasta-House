@@ -13,8 +13,7 @@ xhr.onerror = (e) => {
   console.error(xhr.statusText);
 };
 
-function trim(yourString){ // Define trim function
-  var maxLength = 300 // maximum number of characters to extract
+function trim(yourString, maxLength){ // Define trim function
   
   //trim the string to the maximum length
   var trimmedString = (yourString.trim() + " ").substr(0, maxLength);
@@ -30,14 +29,14 @@ function trim(yourString){ // Define trim function
 }
 
 function populate(data){
-  var a = 1;
+  var a = 0;
   document.getElementById("results").innerHTML = "";
   for (let item of data.bookmarklets){
     content = `
 <div id="ID${a}" class="item" onclick="details(this)">
-    <div class="item-author">${item.author}</div>
-    <div class="item-name">${item.title}</div>
-    <div class="item-desc">${trim(item.desc)}</div>
+    <div class="item-author">${trim(item.author, 50)}</div>
+    <div class="item-name">${trim(item.title, 50)}</div>
+    <div class="item-desc">${trim(item.desc, 175)}</div>
 </div>`;
     document.getElementById("results").innerHTML += content;
     a ++;

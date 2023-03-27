@@ -1,24 +1,73 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>My Drive - Google Drive</title>
+        <link rel="icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png"/>
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="/codelet/details/style.css"/>
         <link rel="stylesheet" href="/assets/grid.css"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <style>
-            div {
-                border: solid 2px black;
+            .title {
+                /*border: solid 2px black;*/
                 margin: 10px;
                 padding: 10px;
+            }
+            .desc {
+                margin: 10px;
+                padding: 20px;
+            }
+            img {
+                border: solid 2px black;
+                border-radius: 10px;
+            }
+            code {
+                border-radius: 5px;
+                padding: 10px;
+                background-color: #363939;
+                transition: 0.4s;
+            }
+            code:hover {
+                background-color: #484d4d;
+            }
+            .clickable {
+                cursor: pointer;
+            }
+            .snippet {
+                width: 90vw;
+                white-space: nowrap;
+                overflow: hidden;
+                display: inline-block;
+                text-overflow: ellipsis;
             }
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="fixed"><img width="200px" src="/assets/img/RED01.png"/></div>
-            <div class="flex-item"><span style="line-height: 200px; font-size: 100px;">Firebug</span></div>
+        <script src="/codelet/details/populate.js"></script>
+        <div class="container title">
+            <div class="fixed title" id="img"><!--img width="200px" src="/assets/img/RED01.png"/--></div>
+            <div class="flex-item title"><span style="line-height: 200px; font-size: 100px;"><b id="title">Loading...<!--Firebug--></b></span></div>
+        </div>
+
+        <div id="info" class="desc">
+            <!--p>Creation Time: 3/23/2023</p-->
+            <h1>Loading...</h1>
+            <!--p>Schools block Inspect Element, but what for? Use this script to fire up your own DevTools console.</p>
+            <br/>
+            <h1>Code</h1>
+            <div class="container">
+                <div class="flex-item">
+                    <code class="snippet">javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)javascript: void(document.designMode = "on"; document.body.contentEditable = true;)</code>
+                    <code class="snippet clickable" style="text-align: center;" onclick="copy();"><i class="fa-solid fa-clipboard"></i> <b>COPY</b></code>
+                </div>
+            </div>
+            <p>Click on this bookmarklet to start hacking like a pro.</p-->
         </div>
     </body>
 </html>
