@@ -67,7 +67,7 @@ function populate(data){
     //alert(timestamp)
     let title = trim(item.title, 50);
     let author = trim(item.author, 50);
-    let code = item.data;
+    window.code = item.data;
     let description = trim(item.desc, 200);
     let ext_desc = trim(item.about, 600);
     let usage = trim(item.usage, 300);
@@ -86,7 +86,7 @@ function populate(data){
     <div class="container">
         <div class="flex-item">
             <code class="snippet">${code}</code>
-            <code class="snippet clickable" style="text-align: center;" onclick="copy();"><i class="fa-solid fa-clipboard"></i> <b>COPY</b></code>
+            <code id="copy-btn" class="snippet clickable" style="text-align: center;" onclick="copy();"><i class="fa-solid fa-clipboard"></i> <b>COPY</b></code>
         </div>
     </div>
     <p>${usage}</p>`;
@@ -107,12 +107,22 @@ function populate(data){
     
 }
 
-function copy(data){
-  var data = [new ClipboardItem({ "text/plain": new Blob(["Text data"], { type: "text/plain" }) })];
-navigator.clipboard.write(data).then(function() {
+function copy(){
+  console.log("hi")
+  //var data = [new ClipboardItem({ "text/plain": new Blob([window.code], { type: "text/plain" }) })];
+  var data = window.code;
+navigator.clipboard.writeText(data).then(function() {
    console.log("Copied to clipboard successfully!");
+   document.getElementById("copy-btn").innerHTML = `<i class="fa-solid fa-check"></i> <b>Copied!</b>`;
+   setTimeout(function(){
+    document.getElementById("copy-btn").innerHTML = `<i class="fa-solid fa-clipboard"></i> <b>COPY</b>`
+   }, 2000)
 }, function() {
   console.error("Unable to write to clipboard. :-(");
+  document.getElementById("copy-btn").innerHTML = `<i class="fa-solid fa-x"></i> <b>ERROR: Clipboard Access Denied.</b>`;
+  setTimeout(function(){
+   document.getElementById("copy-btn").innerHTML = `<i class="fa-solid fa-clipboard"></i> <b>COPY</b>`
+  }, 2000)
 });
 }
 
