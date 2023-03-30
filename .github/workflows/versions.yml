@@ -13,4 +13,5 @@ jobs:
       - run: git config --global user.email "93660666+py660@users.noreply.github.com"
       - run: git add version.html
       - run: git commit -m "bump version"
-      - run: git push
+      - run: git push origin HEAD:main
+      #- run: git push
