@@ -49,3 +49,13 @@ body, html {
 .item-author {
     color: #C0C5C5;
 }
+.copy {
+    float: right;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #7b8585;
+    transition: 0.4s;
+}
+.copy:hover {
+    background-color: #b4c5c5;
+}

@@ -67,7 +67,7 @@ function populate(data){
     //alert(timestamp)
     let title = trim(item.title, 50);
     let author = trim(item.author, 50);
-    window.code = item.data;
+    window.code = trim(item.data, 2097152);
     let description = trim(item.desc, 200);
     let ext_desc = trim(item.about, 600);
     let usage = trim(item.usage, 300);
