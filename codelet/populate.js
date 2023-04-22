@@ -56,14 +56,19 @@ function copybtn(item){
 
 function copy(data){
   if (!window.isSecureContext){
-    alert("This site is not using secure HTTPS, therefore I could not copy the code.")
+    alert("This site is not using HTTPS, therefore I could not copy the code.")
   }
   //var data = [new ClipboardItem({ "text/plain": new Blob([window.code], { type: "text/plain" }) })];
+  try{
 navigator.clipboard.writeText(data).then(function() {
    console.log("Copied to clipboard successfully!");
 }, function() {
   console.error("Unable to write to clipboard.");
 });
+  }
+  catch(e){
+    alert("This site is not using HTTPS, therefore I could not copy the code.")
+  }
 }
 
 xhr.send(null);

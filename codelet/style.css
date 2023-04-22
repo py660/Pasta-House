@@ -8,7 +8,7 @@ body, html {
     padding: 0;
 }
 
-#header {
+#header, #subheader {
     margin: 10px 20px;
     padding: 10px 55px;
     height: 25px;

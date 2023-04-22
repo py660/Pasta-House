@@ -108,22 +108,30 @@ function populate(data){
 }
 
 function copy(){
+  if (!window.isSecureContext){
+    alert("This site is not using HTTPS, therefore I could not copy the code.");
+  }
   console.log("hi")
   //var data = [new ClipboardItem({ "text/plain": new Blob([window.code], { type: "text/plain" }) })];
   var data = window.code;
+  try{
 navigator.clipboard.writeText(data).then(function() {
    console.log("Copied to clipboard successfully!");
    document.getElementById("copy-btn").innerHTML = `<i class="fa-solid fa-check"></i> <b>Copied!</b>`;
    setTimeout(function(){
-    document.getElementById("copy-btn").innerHTML = `<i class="fa-solid fa-clipboard"></i> <b>COPY</b>`
+    document.getElementById("copy-btn").innerHTML = `<i class="fa-solid fa-clipboard"></i> <b>COPY</b>`;
    }, 2000)
 }, function() {
   console.error("Unable to write to clipboard. :-(");
   document.getElementById("copy-btn").innerHTML = `<i class="fa-solid fa-x"></i> <b>ERROR: Clipboard Access Denied.</b>`;
   setTimeout(function(){
-   document.getElementById("copy-btn").innerHTML = `<i class="fa-solid fa-clipboard"></i> <b>COPY</b>`
+   document.getElementById("copy-btn").innerHTML = `<i class="fa-solid fa-clipboard"></i> <b>COPY</b>`;
   }, 2000)
 });
+  }
+  catch(e){
+    alert("This site is not using HTTPS, therefore I could not copy the code.");
+  }
 }
 
-xhr.send(null)
+xhr.send(null);
