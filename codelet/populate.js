@@ -67,7 +67,7 @@ navigator.clipboard.writeText(data).then(function() {
 });
   }
   catch(e){
-    alert("This site is not using HTTPS, therefore I could not copy the code.")
+    //alert("This site is not using HTTPS, therefore I could not copy the code.")
   }
 }
 
