@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>My Drive - Google Drive</title>
         <link rel="icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png"/>
+        
         <link rel="stylesheet" href="/assets/navbar.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
         <style>
             .tabgroup {box-sizing: border-box}
             
@@ -12,7 +18,7 @@
               float: left;
               border: 1px solid #ccc;
               background-color: #f1f1f1;
-              width: 25%;
+              width: 12%;
               height: 100%;
             }
             
@@ -46,7 +52,7 @@
               float: left;
               padding: 0px 12px;
               border: 1px solid #ccc;
-              width: 75%;
+              width: 88%;
               border-left: none;
               height: 100%;
             }
@@ -63,24 +69,24 @@
         <script src="/assets/update.js"></script>
 
         <div class="tab tabgroup">
-          <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-          <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-          <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+          <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Interstellar</button>
+          <button class="tablinks" onclick="openCity(event, 'Paris')">Ultraviolet</button>
+          <button class="tablinks" onclick="openCity(event, 'Tokyo')">Other</button>
         </div>
         
         <div id="London" class="tabcontent tabgroup">
-          <h3>London</h3>
-          <p>London is the capital city of England.</p>
+          <h3>Interstellar Proxies</h3>
+          <ul id="interstellar-list"></ul>
         </div>
         
         <div id="Paris" class="tabcontent tabgroup">
-          <h3>Paris</h3>
-          <p>Paris is the capital of France.</p> 
+          <h3>Ultraviolet Proxies</h3>
+          <ul id="interstellar-list"></ul>
         </div>
         
         <div id="Tokyo" class="tabcontent tabgroup">
-          <h3>Tokyo</h3>
-          <p>Tokyo is the capital of Japan.</p>
+          <h3>Other Proxies</h3>
+          <ul id="interstellar-list"></ul>
         </div>
         
         <script>
