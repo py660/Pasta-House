@@ -1,0 +1,20 @@
+{
+    "proxies": {
+        "interstellar": [
+            {"url": "https://interstellar.hop.sh/", "starred": true},
+            {"url": "https://house.showmyhomes.com/"},
+            {"url": "https://nature.backriverphotography.com/"},
+            {"url": "https://highschool.louis-ip.com/"},
+            {"url": "https://khanacademy.me/"},
+            {"url": "https://interstellars.games/"},
+            {"url": "https://math.avaphotodesign.com/"},
+            {"url": "https://uk.perlaneriphotography.com/"},
+            {"url": "https://fp2lyq-8080.csb.app/"},
+            {"url": "https://home.yourvaluedhomes.com/"}
+        ],
+        "ultraviolet": [
+            {"url": "https://uv.hop.sh/", "starred": true},
+            {"url": "https://c.pr.wip.la/", "note": "Only works for some websites."}
+        ]
+    }
+}

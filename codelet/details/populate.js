@@ -85,7 +85,7 @@ function populate(data){
     <br/>
     <div class="container">
         <div class="flex-item">
-            <code class="snippet">${code}</code>
+            <code class="snippet selectall">${code}</code>
             <code id="copy-btn" class="snippet clickable" style="text-align: center;" onclick="copy();"><i class="fa-solid fa-clipboard"></i> <b>COPY</b></code>
         </div>
     </div>

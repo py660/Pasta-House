@@ -69,24 +69,24 @@
         <script src="/assets/update.js"></script>
 
         <div class="tab tabgroup">
-          <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Interstellar</button>
-          <button class="tablinks" onclick="openCity(event, 'Paris')">Ultraviolet</button>
-          <button class="tablinks" onclick="openCity(event, 'Tokyo')">Other</button>
+          <button class="tablinks" onclick="openCity(event, 'Interstellar')" id="defaultOpen">Interstellar</button>
+          <button class="tablinks" onclick="openCity(event, 'Ultraviolet')">Ultraviolet</button>
+          <button class="tablinks" onclick="openCity(event, 'Other')">Other</button>
         </div>
         
-        <div id="London" class="tabcontent tabgroup">
+        <div id="Interstellar" class="tabcontent tabgroup">
           <h3>Interstellar Proxies</h3>
-          <ul id="interstellar-list"></ul>
+          <ul id="interstellar-list">Loading...</ul>
         </div>
         
-        <div id="Paris" class="tabcontent tabgroup">
+        <div id="Ultraviolet" class="tabcontent tabgroup">
           <h3>Ultraviolet Proxies</h3>
-          <ul id="interstellar-list"></ul>
+          <ul id="ultraviolet-list">Loading...</ul>
         </div>
         
-        <div id="Tokyo" class="tabcontent tabgroup">
+        <div id="Other" class="tabcontent tabgroup">
           <h3>Other Proxies</h3>
-          <ul id="interstellar-list"></ul>
+          <ul id="other-list">Loading...</ul>
         </div>
         
         <script>
@@ -106,6 +106,7 @@
         
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
-        </script>        
+        </script>
+        <script src="/prox/populate.js"></script>       
     </body>
 </html>
