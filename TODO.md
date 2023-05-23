@@ -12,6 +12,7 @@
 
 # Bookmarklet Client
  [ ] Add bookmark categories
+ [ ] Create the universe
  [ ] Add `Download All Bookmarks`
  [ ] Add navbar from homepage
 

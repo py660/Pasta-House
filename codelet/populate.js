@@ -50,6 +50,12 @@ function details(item){
   window.location = "/codelet/details?item=" + item.id;
 }
 
+/*function htmlDecode(input) {
+  var doc = new DOMParser().parseFromString(input, "text/html");
+  return doc.documentElement.textContent;
+}*/
+
+
 function copybtn(item){
   copy(window.data.bookmarklets[item.slice(4)].data)
 }

@@ -15,6 +15,25 @@ xhr.onerror = (e) => {
   alert(xhr.statusText);
 };
 
+function htmlEscape(str) {
+  return str
+      .replace(/&/g, '&amp')
+      .replace(/'/g, '&apos')
+      .replace(/"/g, '&quot')
+      .replace(/>/g, '&gt')   
+      .replace(/</g, '&lt');    
+}
+
+// The opposite function:
+function htmlUnescape(str) {
+  return str
+      .replace(/&amp/g, '&')
+      .replace(/&apos/g, "'")
+      .replace(/&quot/g, '"')
+      .replace(/&gt/g, '>')   
+      .replace(/&lt/g, '<');    
+}
+
 function trim(yourString, maxLength){ // Define trim function
   //var maxLength = 600 // maximum number of characters to extract
   
@@ -85,7 +104,7 @@ function populate(data){
     <br/>
     <div class="container">
         <div class="flex-item">
-            <code class="snippet selectall">${code}</code>
+            <code class="snippet selectall">${htmlEscape(code)}</code>
             <code id="copy-btn" class="snippet clickable" style="text-align: center;" onclick="copy();"><i class="fa-solid fa-clipboard"></i> <b>COPY</b></code>
         </div>
     </div>

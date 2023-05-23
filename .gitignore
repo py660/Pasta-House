@@ -1,3 +1,5 @@
 .vscode
 .github
 templates.md
+.ignore
+.nohup.out
