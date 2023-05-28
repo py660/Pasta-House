@@ -17,19 +17,19 @@ xhr.onerror = (e) => {
 
 function htmlEscape(str) {
   return str
-      .replace(/&/g, '&amp')
-      .replace(/"/g, '&quot')
-      .replace(/>/g, '&gt')   
-      .replace(/</g, '&lt');    
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/>/g, '&gt;')   
+      .replace(/</g, '&lt;');    
 }
 
 // The opposite function:
 function htmlUnescape(str) {
   return str
-      .replace(/&amp/g, '&')
-      .replace(/&quot/g, '"')
-      .replace(/&gt/g, '>')   
-      .replace(/&lt/g, '<');    
+      .replace(/&amp;/g, '&')
+      .replace(/&quot;/g, '"')
+      .replace(/&gt;/g, '>')   
+      .replace(/&lt;/g, '<');    
 }
 
 function trim(yourString, maxLength){ // Define trim function

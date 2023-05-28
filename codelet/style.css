@@ -15,7 +15,7 @@ body, html {
     text-align: center;
 }
 
-#results {
+.results {
     width: max(100%, 200px);
     margin: 20px;
     background-color: #4A4F51;
