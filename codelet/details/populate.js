@@ -18,7 +18,6 @@ xhr.onerror = (e) => {
 function htmlEscape(str) {
   return str
       .replace(/&/g, '&amp')
-      .replace(/'/g, '&apos')
       .replace(/"/g, '&quot')
       .replace(/>/g, '&gt')   
       .replace(/</g, '&lt');    
@@ -28,7 +27,6 @@ function htmlEscape(str) {
 function htmlUnescape(str) {
   return str
       .replace(/&amp/g, '&')
-      .replace(/&apos/g, "'")
       .replace(/&quot/g, '"')
       .replace(/&gt/g, '>')   
       .replace(/&lt/g, '<');    
@@ -93,11 +91,12 @@ function populate(data){
     
     document.getElementById("title").innerHTML = title;
     document.getElementById("img").innerHTML = `<img width="200px" src="/assets/img/RED01.png"/>`;
+    
     let content = `
-    <p>Uploaded 3/23/2023</p>
-    <p>Submitted by ${author}</p>
-    <h1>${description}</h1>
-    <p>${ext_desc}</p>
+    <p>Uploaded ${timestamp}</p>
+    <p>Submitted by ${htmlEscape(author)}</p>
+    <h1>${htmlEscape(description)}</h1>
+    <p>${htmlEscape(ext_desc)}</p>
     <br/>
     <!--h1>Code</h1-->
     <!--hr/-->
@@ -108,7 +107,7 @@ function populate(data){
             <code id="copy-btn" class="snippet clickable" style="text-align: center;" onclick="copy();"><i class="fa-solid fa-clipboard"></i> <b>COPY</b></code>
         </div>
     </div>
-    <p>${usage}</p>`;
+    <p>${htmlEscape(usage)}</p>`;
     document.getElementById("info").innerHTML = content;
 
 
