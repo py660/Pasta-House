@@ -60,11 +60,11 @@
     </head>
     <body>
         <h1 id="header">Bookmarklets (<a href="https://youtu.be/EQCCcY5MNWA?t=94" style="color: white;">Tutorial</a>)</h1>
+        <h3 class="subheader" onclick="this.innerHTML = 'Loading...'; window.location = 'https:/' + '/upload.hop.sh';" style="cursor: pointer; background-color: grey;">Submit your own!</h3>
         <script>
             window.onunload = function(){};
-            document.getElementById("subheader").innerHTML = "Submit your own!";
+            //document.getElementById("subheader").innerHTML = "Submit your own!";
         </script>
-        <h3 class="subheader" onclick="this.innerHTML = 'Loading...'; window.location = 'https:/' + '/upload.hop.sh';" style="cursor: pointer; background-color: grey;">Submit your own!</h3>
         <script src="/codelet/populate.js"></script>
         <div class="tab tabgroup">
             <button class="tablinks" onclick="openCity(event, 'featured')" id="defaultOpen">Featured</button>
@@ -75,7 +75,6 @@
         <div id="featured" class="tabcontent tabgroup">
             <!--h3>Interstellar Proxies</h3-->
             <div id="results" class="results">Loading...
-
                 <!--div class="item">
                     <div class="item-author">JASON LIN</div>
                     <div class="item-name">Firebug</div>
