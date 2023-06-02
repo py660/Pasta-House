@@ -31,7 +31,10 @@ function trim(yourString, maxLength){ // Define trim function
 function populate(data){
   window.data = data;
   var a = 0;
-  document.getElementById("results").innerHTML = "";
+  console.log(data.categories);
+  for (let category of data.categories){
+    document.getElementById(category + "-results").innerHTML = "";
+  }
   for (let item of data.bookmarklets){
     content = `
 <div id="ID${a}" class="item" onclick="details(this)">
@@ -40,7 +43,13 @@ function populate(data){
     <div class="item-name">${trim(item.title, 50)}</div>
     <div class="item-desc">${trim(item.desc, 175)}</div>
 </div>`;
-    document.getElementById("results").innerHTML += content;
+    item.category = item.category||[""];
+    item.category.push("all");
+    console.log(item);
+    for (let category of item.category){
+      console.log(category)
+      document.getElementById(category + "-results").innerHTML += content;
+    }
 
     a ++;
   }

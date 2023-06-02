@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta content='width=device-width, initial-scale=1' name='viewport'/>
         <title>My Drive - Google Drive</title>
         <link rel="icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png"/>
 
@@ -67,14 +69,19 @@
         </script>
         <script src="/codelet/populate.js"></script>
         <div class="tab tabgroup">
-            <button class="tablinks" onclick="openCity(event, 'featured')" id="defaultOpen">Featured</button>
-            <button class="tablinks" onclick="openCity(event, 'useful')">Useful</button>
-            <button class="tablinks" onclick="openCity(event, 'other')">Other</button>
+            <button class="tablinks" onclick="openCity(event, 'featured')" id="defaultOpen">Featured &#9733;</button>
+            <button class="tablinks" onclick="openCity(event, 'utility')">Utility</button>
+            <button class="tablinks" onclick="openCity(event, 'fun')">Fun</button>
+            <button class="tablinks" onclick="openCity(event, 'cloak')">Cloaking</button>
+            <button class="tablinks" onclick="openCity(event, 'youtube')">YouTube</button>
+            <button class="tablinks" onclick="openCity(event, 'devtools')">DevTools</button>
+            <button class="tablinks" onclick="openCity(event, 'about')" id="newUserOpen">About</button>
+            <button class="tablinks" onclick="openCity(event, 'all')">All</button>
         </div>
         
         <div id="featured" class="tabcontent tabgroup">
             <!--h3>Interstellar Proxies</h3-->
-            <div id="results" class="results">Loading...
+            <div id="featured-results" class="results">Loading...
                 <!--div class="item">
                     <div class="item-author">JASON LIN</div>
                     <div class="item-name">Firebug</div>
@@ -93,13 +100,38 @@
                 
             </div>
         </div>
-        <div id="useful" class="tabcontent tabgroup">
-            <h3>Ultraviolet Proxies</h3>
-            <ul id="ultraviolet-list">Loading...</ul>
+        <div id="utility" class="tabcontent tabgroup">
+            <div id="utility-results" class="results">Loading...
+            </div>
+        </div>
+        <div id="devtools" class="tabcontent tabgroup">
+            <div id="devtools-results" class="results">Loading...
+            </div>
+        </div>
+        <div id="youtube" class="tabcontent tabgroup">
+            <div id="youtube-results" class="results">Loading...
+            </div>
+        </div>
+        <div id="cloak" class="tabcontent tabgroup">
+            <div id="cloak-results" class="results">Loading...
+            </div>
+        </div>
+        <div id="fun" class="tabcontent tabgroup">
+            <div id="fun-results" class="results">Loading...
+            </div>
         </div>
         <div id="other" class="tabcontent tabgroup">
-            <h3>Other Proxies</h3>
-            <ul id="other-list">Loading...</ul>
+            <div id="other-results" class="results">Loading...
+            </div>
+        </div>
+        <div id="all" class="tabcontent tabgroup">
+            <div id="all-results" class="results">Loading...
+            </div>
+        </div>
+        <div id="about" class="tabcontent tabgroup">
+            <h3>About the <b>Pasta House Bookmarklet Index (BMI)</b></h3>
+            <p>Blah blah blah</p>
+            </div>
         </div>
 
         <script>
@@ -117,8 +149,30 @@
                 evt.currentTarget.className += " active";
             }
 
+            function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+            }
+
             // Get the element with id="defaultOpen" and click on it
-            document.getElementById("defaultOpen").click();
+            if (getCookie("beenHereBefore") != "1"){
+                document.getElementById("newUserOpen").click();
+                document.cookie = "beenHereBefore=1";
+            }
+            else {
+                document.getElementById("defaultOpen").click();
+            }
         </script>
         
     </body>
