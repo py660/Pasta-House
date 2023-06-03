@@ -28,7 +28,7 @@
             /* Style the buttons inside the tab */
             .tab button {
               display: block;
-              background-color: inherit;
+              /*background-color: inherit;*/
               color: white;
               padding: 22px 16px;
               width: 100%;
@@ -39,15 +39,37 @@
               transition: 0.3s;
               font-size: 17px;
             }
-            
-            /* Change background color of buttons on hover */
-            .tab button:hover {
-              background-color: #7b8585;
+            .tab button:not(.tablinkred):not(.tablinkblue) {
+                background-color: inherit;
+            }
+            .tablinkred {
+                background-color: #825050;
+            }
+            .tablinkblue {
+                background-color: #575d8f;
             }
             
             /* Create an active/current "tab button" class */
-            .tab button.active {
+            .tab button.active:not(.tablinkred):not(.tablinkblue) {
               background-color: #7b8585;
+            }
+            .tablinkred.active {
+                background-color: #995f5f;
+            }
+            .tablinkblue.active {
+                background-color: #6969ac;
+            }
+            
+
+            /* Change background color of buttons on hover */
+            .tab button:hover:not(.tablinkred):not(.tablinkblue) {
+              background-color: #899494;
+            }
+            .tablinkred:hover {
+                background-color: #9e6262;
+            }
+            .tablinkblue:hover {
+                background-color: #6e6eb3;
             }
             
             /* Style the tab content */
@@ -57,6 +79,10 @@
               width: calc(100% - 220px);
               border-left: none;
               height: 100%;
+            }
+
+            .descText {
+                color: #bbbbbb;
             }
         </style>
     </head>
@@ -68,15 +94,36 @@
             //document.getElementById("subheader").innerHTML = "Submit your own!";
         </script>
         <script src="/codelet/populate.js"></script>
+
+        <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tipso/1.0.8/tipso.min.css" integrity="sha512-VMdIf9SUbOe7rpr6D0atXSYFPrQi8m/3EGvzwHoPLuJ0JafQ+C9z4mmMBE5tk1voVsiGurL3WV+o2uTz10ud5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tipso/1.0.8/tipso.min.js" integrity="sha512-uffeXd+Tch3d7SWCkqqRg56IiDLYVnsXSJ22uDJ5DP1Nh55XphpL1BHL4c2NbpBrgmPjH4w9C9zgYQzwC8343w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script>
+            $('.tipso').tipso();
+            $('#header').tipso({
+                titleContent: 'Hello'
+            });
+        </script-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet">
+        <script>
+            new jBox('Tooltip', {
+                attach: '.tooltip'
+            });
+        </script>
+
         <div class="tab tabgroup">
-            <button class="tablinks" onclick="openCity(event, 'featured')" id="defaultOpen">Featured &#9733;</button>
-            <button class="tablinks" onclick="openCity(event, 'utility')">Utility</button>
-            <button class="tablinks" onclick="openCity(event, 'fun')">Fun</button>
-            <button class="tablinks" onclick="openCity(event, 'cloak')">Cloaking</button>
-            <button class="tablinks" onclick="openCity(event, 'youtube')">YouTube</button>
-            <button class="tablinks" onclick="openCity(event, 'devtools')">DevTools</button>
-            <button class="tablinks" onclick="openCity(event, 'about')" id="newUserOpen">About</button>
-            <button class="tablinks" onclick="openCity(event, 'all')">All</button>
+            <button class="tablinks tooltip tablinkred" title="Hand-picked featured bookmarklets." onclick="openCity(event, 'featured')" id="defaultOpen">Featured &#9733;</button>
+            <button class="tablinks tooltip" title="Useful bookmarklets that make your life easier." onclick="openCity(event, 'tools')">Tools</button>
+            <button class="tablinks tooltip" title="Effects and fun stuff" onclick="openCity(event, 'graphics')">Visual Effects & Games</button>
+            <button class="tablinks tooltip" title="Ways to hide your internet activity." onclick="openCity(event, 'cloak')">Cloaking</button>
+            <!--button class="tablinks" onclick="openCity(event, 'youtube')">YouTube</button-->
+            <!--button class="tablinks" onclick="openCity(event, 'devtools')">DevTools</button-->
+            <button class="tablinks tooltip tablinkblue" title="About the Bookmarklet Index" onclick="openCity(event, 'about')" id="newUserOpen">About</button>
+            <button class="tablinks tooltip tablinkblue" title="Try out all of our bookmarklets." onclick="openCity(event, 'import')">Import</button>
+            <button class="tablinks tooltip tablinkred" title="All bookmarklets" onclick="openCity(event, 'all')">All Bookmarklets</button>
         </div>
         
         <div id="featured" class="tabcontent tabgroup">
@@ -100,28 +147,16 @@
                 
             </div>
         </div>
-        <div id="utility" class="tabcontent tabgroup">
-            <div id="utility-results" class="results">Loading...
+        <div id="tools" class="tabcontent tabgroup">
+            <div id="tools-results" class="results">Loading...
             </div>
         </div>
-        <div id="devtools" class="tabcontent tabgroup">
-            <div id="devtools-results" class="results">Loading...
-            </div>
-        </div>
-        <div id="youtube" class="tabcontent tabgroup">
-            <div id="youtube-results" class="results">Loading...
+        <div id="graphics" class="tabcontent tabgroup">
+            <div id="graphics-results" class="results">Loading...
             </div>
         </div>
         <div id="cloak" class="tabcontent tabgroup">
             <div id="cloak-results" class="results">Loading...
-            </div>
-        </div>
-        <div id="fun" class="tabcontent tabgroup">
-            <div id="fun-results" class="results">Loading...
-            </div>
-        </div>
-        <div id="other" class="tabcontent tabgroup">
-            <div id="other-results" class="results">Loading...
             </div>
         </div>
         <div id="all" class="tabcontent tabgroup">
@@ -129,9 +164,18 @@
             </div>
         </div>
         <div id="about" class="tabcontent tabgroup">
-            <h3>About the <b>Pasta House Bookmarklet Index (BMI)</b></h3>
-            <p>Blah blah blah</p>
-            </div>
+            <h1>About the <i>Pasta House Bookmarklet Index (BMI)</i></h1>
+            <p class="descText">Welcome to Pasta House, where you can find <i>quality</i> bookmarklets, both user-submitted and created.</p>
+            <h2>What is a bookmarklet?</h2>
+            <p class="descText">A bookmarklet is a bookmark that can run code.</p>
+            <h2>Why bookmarklets?</h2>
+            <p class="descText">Bookmarklets can help you do anything from automating daily tasks, such as blocking YouTube ads, to pulling a prank on friends, such as blurring the page.</p>
+            <h2>How do I install a bookmarklet?</h2>
+            <p class="descText">Just create a new bookmark and set the URL to the code beginning with "javascript:". To import all bookmarklets into your browser, you can find instructions <a onclick="openCity(event, 'import')">here</a>.
+        </div>
+        <div id="import" class="tabcontent tabgroup">
+            <h1>Importing is still a <b>Work In Progress (WIP)</b></h1>
+            <p class="descText">Check back later for a way to import all of the bookmarklets.</p>
         </div>
 
         <script>
