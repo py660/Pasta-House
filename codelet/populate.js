@@ -30,9 +30,10 @@ function trim(yourString, maxLength){ // Define trim function
 
 function populate(data){
   window.data = data;
+  console.log(data);
   var a = 0;
-  console.log(data.categories);
   for (let category of data.categories){
+    console.log(category, document.getElementById(category + "-results"));
     document.getElementById(category + "-results").innerHTML = "";
   }
   for (let item of data.bookmarklets){
